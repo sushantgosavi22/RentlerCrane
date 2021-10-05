@@ -6,8 +6,14 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.sushant.sampledemomvvmapicall.R
+import com.sushant.sampledemomvvmapicall.constant.Utils
 
 open class BaseActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Utils.setStatusBarGradiant(this)
+    }
     private var dialog: AlertDialog? = null
     /**
      * Show progress bar.

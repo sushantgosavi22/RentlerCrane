@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.sushant.sampledemomvvmapicall",
+  "applicationId": "com.aands.rentlervehicle",
   "variantName": "release",
   "elements": [
     {
@@ -12,7 +12,7 @@
       "filters": [],
       "versionCode": 1,
       "versionName": "1.0",
-      "outputFile": "ProximityCodeingAssignment-1-1.0-210830-release.apk"
+      "outputFile": "Rentler-1-1.0-211003-release.apk"
     }
   ]
 }

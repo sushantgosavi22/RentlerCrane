@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
             name="viewModel"
-            type="com.sushant.sampledemomvvmapicall.views.dashboard.viewmodel.DashboardViewModel" />
+            type="com.sushant.sampledemomvvmapicall.views.base.BaseViewModel" />
     </data>
     <FrameLayout
+        android:id="@+id/baseListingView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -18,7 +20,9 @@
             android:layout_gravity="center"
             android:drawablePadding="16dp"
             android:drawableTop="@android:drawable/stat_notify_error"
+            android:textColor="@color/white"
             android:padding="16dp"
+            tools:visibility="visible"
             android:text="@string/user_list_error"
             android:visibility="gone"/>
 

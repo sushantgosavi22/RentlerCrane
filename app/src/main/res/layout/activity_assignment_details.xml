@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.sushant.sampledemomvvmapicall.constant.Constants" />
+
+        <variable
+            name="assignment"
+            type="com.sushant.sampledemomvvmapicall.views.assignmentdetails.Assignment" />
+
+    </data>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.vehicaldetail.VehicleDetailActivity">
+
+
+        <include
+            android:id="@+id/includedToolbar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/appbar_layout"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvCardView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:elevation="@dimen/dp_10"
+            android:layout_margin="@dimen/dp_20"
+            app:cardCornerRadius="@dimen/dp_10"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/includedToolbar"
+            bind:targetApi="lollipop">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toTopOf="@+id/btnSaveAssignment"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+
+                        <com.sushant.sampledemomvvmapicall.views.customui.CustomTextInputEditText
+                            android:id="@+id/ownerName"
+                            style="@style/MyCustomTextInputStyle"
+                            android:hint="@string/contractor_name"
+                            bind:textCapitalizeValue="@={assignment.ownerName}" />
+
+                        <com.sushant.sampledemomvvmapicall.views.customui.CustomTextInputEditText
+                            android:id="@+id/mobileNumber"
+                            style="@style/MyCustomTextInputStyle"
+                            android:hint="@string/mobile_number"
+                            bind:digit="@{Constants.NUMBER_DIGIT}"
+                            bind:maxLength="@{Constants.MAX_LENGTH}"
+                            bind:textValue="@={assignment.mobileNumber}" />
+
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+
+                            <com.sushant.sampledemomvvmapicall.views.customui.CustomDatePicker
+                                android:id="@+id/startDate"
+                                style="@style/MyCustomTextInputStyle"
+                                android:layout_width="@dimen/dp_0"
+                                android:layout_weight="1"
+                                android:hint="@string/start_date"
+                                app:endIconMode="custom"
+                                app:endIconDrawable="@android:drawable/ic_menu_my_calendar"
+                                app:format="datetime"
+                                bind:dateFormat="@{Constants.DEFAULT_DATE_TIME_PICKER_FORMAT}"
+                                bind:longDateValue="@={assignment.startDate}" />
+
+                            <com.sushant.sampledemomvvmapicall.views.customui.CustomDatePicker
+                                android:id="@+id/endDate"
+                                style="@style/MyCustomTextInputStyle"
+                                android:layout_width="@dimen/dp_0"
+                                android:layout_weight="1"
+                                android:hint="@string/start_date"
+                                app:endIconMode="custom"
+                                app:endIconDrawable="@android:drawable/ic_menu_my_calendar"
+                                app:format="datetime"
+                                bind:dateFormat="@{Constants.DEFAULT_DATE_TIME_PICKER_FORMAT}"
+                                bind:longDateValue="@={assignment.endDate}" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                        <!--Date picker -->
+                        <com.sushant.sampledemomvvmapicall.views.customui.CustomTextInputEditText
+                            android:id="@+id/location"
+                            style="@style/MyCustomTextInputStyle"
+                            android:layout_width="match_parent"
+                            app:endIconMode="custom"
+                            app:endIconDrawable="@drawable/ic_baseline_location_on_24"
+                            android:hint="@string/location"
+                            bind:textValue="@={assignment.loaction}" />
+
+                        <com.sushant.sampledemomvvmapicall.views.customui.CustomTextInputEditText
+                            android:id="@+id/dieselInLiter"
+                            style="@style/MyCustomTextInputStyle"
+                            android:layout_width="match_parent"
+                            android:hint="@string/diesel_in_liter"
+                            bind:digit="@{Constants.NUMBER_DIGIT}"
+                            bind:maxLength="@{Constants.MAX_LENGTH}"
+                            bind:textValue="@={assignment.dieselInLiter}" />
+
+                        <com.sushant.sampledemomvvmapicall.views.customui.CustomAutocompleteEditText
+                            android:id="@+id/paymentTerms"
+                            style="@style/MyCustomAutocompleteTextInputStyle"
+                            android:hint="@string/payment_term"
+                            bind:autocompleteValue="@={assignment.paymentTerm}"
+                            bind:entries="@{@stringArray/payment_terms_list}" />
+
+                        <!-- <com.google.android.material.textfield.TextInputLayout
+                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:hint="Gender">
+
+                             <com.sushant.sampledemomvvmapicall.views.customui.MyAutoCompleteSpinner
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 entries="@{@stringArray/genders}"
+                                 value="@={assignment.paymentTerm}"/>
+
+                         </com.google.android.material.textfield.TextInputLayout>-->
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="3">
+
+
+                            <com.sushant.sampledemomvvmapicall.views.customui.CustomTextInputEditText
+                                android:id="@+id/hour"
+                                style="@style/MyCustomTextInputStyle"
+                                android:layout_width="@dimen/dp_0"
+                                android:layout_weight="1"
+                                android:hint="@string/hour"
+                                bind:digit="@{Constants.NUMBER_DIGIT}"
+                                bind:maxLength="@{Constants.MAX_LENGTH}"
+                                bind:intValue="@={assignment.hour}" />
+
+                            <com.sushant.sampledemomvvmapicall.views.customui.CustomTextInputEditText
+                                android:id="@+id/perHourAmount"
+                                style="@style/MyCustomTextInputStyle"
+                                android:layout_width="@dimen/dp_0"
+                                android:layout_weight="1"
+                                android:hint="@string/per_hour_amount"
+                                bind:digit="@{Constants.NUMBER_DIGIT}"
+                                bind:maxLength="@{Constants.MAX_LENGTH}"
+                                bind:intValue="@={assignment.perHourAmount}" />
+
+                            <com.sushant.sampledemomvvmapicall.views.customui.CustomTextInputEditText
+                                android:id="@+id/paymentAmount"
+                                style="@style/MyCustomTextInputStyle"
+                                android:layout_width="@dimen/dp_0"
+                                android:layout_weight="1"
+                                android:enabled="false"
+                                android:hint="@string/payment_amount"
+                                bind:intValue="@={assignment.paymentAmount}" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+
+                            <com.sushant.sampledemomvvmapicall.views.customui.CustomTextInputEditText
+                                android:id="@+id/paidAmount"
+                                style="@style/MyCustomTextInputStyle"
+                                android:layout_width="@dimen/dp_0"
+                                android:layout_weight="1"
+                                android:hint="@string/paid_amount"
+                                bind:digit="@{Constants.NUMBER_DIGIT}"
+                                bind:maxLength="@{Constants.MAX_LENGTH}"
+                                bind:intValue="@={assignment.paidAmount}" />
+
+                            <com.sushant.sampledemomvvmapicall.views.customui.CustomTextInputEditText
+                                android:id="@+id/remainingAmount"
+                                style="@style/MyCustomTextInputStyle"
+                                android:layout_width="@dimen/dp_0"
+                                android:layout_weight="1"
+                                android:enabled="false"
+                                android:hint="@string/remaining_payment_amount"
+                                bind:intValue="@={assignment.remainingPaymentAmount}" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </ScrollView>
+
+                <com.sushant.sampledemomvvmapicall.views.customui.CustomFullLengthButton
+                    android:id="@+id/btnSaveAssignment"
+                    style="@style/CustomFullLengthButtonStyle"
+                    android:text="@string/button_save_assignment"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

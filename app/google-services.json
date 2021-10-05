@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "1073111241097",
+    "firebase_url": "https://rentler-71eac-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "rentler-71eac",
+    "storage_bucket": "rentler-71eac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1073111241097:android:4c811a88bd981cb47f9158",
+        "android_client_info": {
+          "package_name": "com.aands.rentler"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1073111241097-4q7ivllit7hkulmnjpt5f2ukrs83b1j1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCS_Y5NRWl9wqtImFmNK4gWaBOgyHU4_Vw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1073111241097-4q7ivllit7hkulmnjpt5f2ukrs83b1j1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1073111241097:android:fd220bf814459b0a7f9158",
+        "android_client_info": {
+          "package_name": "com.aands.rentlervehicle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1073111241097-kho9mkaidavpj9pfc5pice8u0t2jio80.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aands.rentlervehicle",
+            "certificate_hash": "19c1cae9060916c661a09dca45984dcd031155ba"
+          }
+        },
+        {
+          "client_id": "1073111241097-4q7ivllit7hkulmnjpt5f2ukrs83b1j1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCS_Y5NRWl9wqtImFmNK4gWaBOgyHU4_Vw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1073111241097-4q7ivllit7hkulmnjpt5f2ukrs83b1j1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

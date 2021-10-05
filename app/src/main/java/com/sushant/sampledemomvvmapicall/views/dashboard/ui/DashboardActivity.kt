@@ -10,13 +10,11 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sushant.sampledemomvvmapicall.R
 import com.sushant.sampledemomvvmapicall.constant.Utils
-import com.sushant.sampledemomvvmapicall.databinding.ActivityDashboardBinding
+import com.sushant.sampledemomvvmapicall.databinding.FragmentBaseListingBinding
 import com.sushant.sampledemomvvmapicall.model.FeedItem
 import com.sushant.sampledemomvvmapicall.model.FeedResponse
-import com.sushant.sampledemomvvmapicall.repositorys.feedrepo.FeedRepository
 import com.sushant.sampledemomvvmapicall.service.model.ApiResponse
 import com.sushant.sampledemomvvmapicall.service.model.Status
-import com.sushant.sampledemomvvmapicall.service.provider.ServiceProvider
 import com.sushant.sampledemomvvmapicall.views.adapter.BaseViewHolder
 import com.sushant.sampledemomvvmapicall.views.adapter.ItemAdapter
 import com.sushant.sampledemomvvmapicall.views.adapter.FeedNewsViewHolder
@@ -27,14 +25,14 @@ import com.sushant.sampledemomvvmapicall.views.dashboard.viewmodel.DashboardView
 class DashboardActivity : BaseActivity(), ItemAdapter.IAdapterItemListener<FeedItem> {
 
     private lateinit var dashboardViewModel: DashboardViewModel
-    private lateinit var binding: ActivityDashboardBinding
+    private lateinit var binding: FragmentBaseListingBinding
     private val adapter by lazy {
         ItemAdapter(ArrayList(), this)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_dashboard)
+        binding = DataBindingUtil.setContentView(this, R.layout.fragment_base_listing)
         binding.lifecycleOwner = this
         title = getString(R.string.app_name)
         dashboardViewModel =

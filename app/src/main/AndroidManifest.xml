@@ -6,21 +6,38 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:allowBackup="true"
         android:name=".application.App"
+        android:allowBackup="true"
         android:icon="@drawable/app_icon_news"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@drawable/app_icon_news"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:requestLegacyExternalStorage="true"
-        android:theme="@style/Theme.SampleDemoMVVMAPICall">
-        <activity android:name=".views.dashboard.ui.DashboardActivity">
+        android:theme="@style/Theme.SampleDemoMVVMAPICall"
+        android:usesCleartextTraffic="true">
+
+        <activity
+            android:name=".views.assignmentdetails.AssignmentDetailsActivity"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".views.vehicaldetail.VehicleDetailActivity"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".views.rentlerdashboard.RentlerDashboard"
+            android:label="@string/title_activity_rentler_dashboard"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".views.dashboard.ui.DashboardActivity"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
